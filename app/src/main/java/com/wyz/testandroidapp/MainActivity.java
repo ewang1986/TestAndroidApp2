@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,8 +46,15 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == R.id.action_help) {
+            showToast("you click Help");
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showToast(String mString) {
+        Toast.makeText(this, mString, Toast.LENGTH_SHORT).show();
     }
 }
