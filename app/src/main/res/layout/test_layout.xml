@@ -9,5 +9,11 @@
         android:textAllCaps="false"
         android:text="just for test!"
         android:textColor="#fff"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="@color/colorPrimaryDark"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/iv_kj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
 </LinearLayout>
