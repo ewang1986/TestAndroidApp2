@@ -1,5 +1,6 @@
 package com.wyz.testandroidapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,9 +9,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.wyz.testandroidapp.activity.KJMainActivity;
+import com.wyz.testandroidapp.activity.OkHttpMainActivity;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        init();
+    }
+
+    private void init() {
+        Button btn_kj = (Button) findViewById(R.id.btn_kjFrame);
+        Button btn_okhttp = (Button) findViewById(R.id.btn_okHttp);
+        btn_kj.setOnClickListener(this);
+        btn_okhttp.setOnClickListener(this);
     }
 
     @Override
@@ -56,5 +70,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void showToast(String mString) {
         Toast.makeText(this, mString, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_kjFrame:
+                Intent kjIntent = new Intent(this, KJMainActivity.class);
+                startActivity(kjIntent);
+                break;
+            case R.id.btn_okHttp:
+                Intent okIntent = new Intent(this, OkHttpMainActivity.class);
+                startActivity(okIntent);
+                break;
+        }
     }
 }
