@@ -2,6 +2,7 @@ package com.wyz.testandroidapp;
 
 import android.app.Application;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.util.concurrent.TimeUnit;
@@ -21,6 +22,8 @@ public class MyApplication extends Application {
             //其他配置
             .build();
         OkHttpUtils.initClient(okHttpClient);
+
+        Fresco.initialize(this);
 
 
     }

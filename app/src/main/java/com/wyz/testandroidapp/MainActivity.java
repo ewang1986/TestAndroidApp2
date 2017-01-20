@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.wyz.testandroidapp.activity.FrescoMainActivity;
 import com.wyz.testandroidapp.activity.KJMainActivity;
 import com.wyz.testandroidapp.activity.OkHttpMainActivity;
 
@@ -39,8 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void init() {
         Button btn_kj = (Button) findViewById(R.id.btn_kjFrame);
         Button btn_okhttp = (Button) findViewById(R.id.btn_okHttp);
+        Button btn_fresco = (Button) findViewById(R.id.btn_fresco);
         btn_kj.setOnClickListener(this);
         btn_okhttp.setOnClickListener(this);
+        btn_fresco.setOnClickListener(this);
     }
 
     @Override
@@ -82,6 +85,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_okHttp:
                 Intent okIntent = new Intent(this, OkHttpMainActivity.class);
                 startActivity(okIntent);
+                break;
+            case R.id.btn_fresco:
+                Intent frescoIntent = new Intent(this, FrescoMainActivity.class);
+                startActivity(frescoIntent);
                 break;
         }
     }

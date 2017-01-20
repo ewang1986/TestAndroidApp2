@@ -29,4 +29,10 @@
         style="@style/MainButton"
         android:text="@string/OkHttp"
         />
+    <Button
+        android:id="@+id/btn_fresco"
+        android:layout_below="@id/btn_okHttp"
+        style="@style/MainButton"
+        android:text="@string/Fresco"
+        />
 </RelativeLayout>

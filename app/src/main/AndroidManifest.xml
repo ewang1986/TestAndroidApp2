@@ -25,6 +25,8 @@
 
         <activity android:name=".activity.KJMainActivity" android:theme="@style/AppTheme.AppBarOverlay"></activity>
         <activity android:name=".activity.OkHttpMainActivity"></activity>
+        <activity android:name=".activity.FrescoMainActivity"></activity>
+        <activity android:name=".activity.FrescoSimpleActivity"></activity>
 \
     </application>
 
