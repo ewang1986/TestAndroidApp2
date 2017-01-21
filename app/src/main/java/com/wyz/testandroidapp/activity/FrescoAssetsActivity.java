@@ -29,10 +29,6 @@ public class FrescoAssetsActivity extends Activity{
     private void init() {
         Uri uri = Uri.parse("res://"+ getApplication().getPackageName()+ R.mipmap.ic_launcher);
         Bitmap bmp = null;
-
-        ImageView iv_res = (ImageView) findViewById(R.id.iv_res);
-        ImageView iv_assets = (ImageView) findViewById(R.id.iv_assets);
-        iv_res.setImageResource(R.mipmap.ic_launcher);
         try {
             InputStream is = getAssets().open("j15.png");
             bmp = BitmapFactory.decodeStream(is);
@@ -40,7 +36,14 @@ public class FrescoAssetsActivity extends Activity{
             e.printStackTrace();
             Log.d("wyz", e.getMessage());
         }
+
+        ImageView iv_res = (ImageView) findViewById(R.id.iv_res);
+        ImageView iv_assets = (ImageView) findViewById(R.id.iv_assets);
+        SimpleDraweeView sdv = (SimpleDraweeView) findViewById(R.id.sdv_simple);
+        iv_res.setImageResource(R.mipmap.ic_launcher);
         iv_assets.setImageBitmap(bmp);
+        //TODO Uri
+        //sdv.setImageURI(uri);
 
     }
 }
