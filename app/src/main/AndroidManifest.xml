@@ -27,6 +27,7 @@
         <activity android:name=".activity.OkHttpMainActivity"></activity>
         <activity android:name=".activity.FrescoMainActivity"></activity>
         <activity android:name=".activity.FrescoSimpleActivity"></activity>
+        <activity android:name=".activity.FrescoAssetsActivity"></activity>
 \
     </application>
 

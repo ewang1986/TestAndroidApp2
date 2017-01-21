@@ -9,4 +9,10 @@
         android:layout_height="wrap_content"
         android:text="SimpleDraweeView"
         android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/btn_assets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load from Assets"
+        android:textAllCaps="false"/>
 </LinearLayout>

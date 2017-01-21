@@ -22,7 +22,9 @@ public class FrescoMainActivity extends Activity implements View.OnClickListener
 
     private void init() {
         Button btn_simple = (Button) findViewById(R.id.btn_simple);
+        Button btn_assets = (Button) findViewById(R.id.btn_assets);
         btn_simple.setOnClickListener(this);
+        btn_assets.setOnClickListener(this);
     }
 
     @Override
@@ -31,6 +33,10 @@ public class FrescoMainActivity extends Activity implements View.OnClickListener
             case R.id.btn_simple:
                 Intent simpleIntent = new Intent(this, FrescoSimpleActivity.class);
                 startActivity(simpleIntent);
+                break;
+            case R.id.btn_assets:
+                Intent assetsIntent = new Intent(this, FrescoAssetsActivity.class);
+                startActivity(assetsIntent);
                 break;
         }
     }
