@@ -1,12 +1,18 @@
 package com.wyz.testandroidapp.activity;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wyz.testandroidapp.R;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Created by wyz on 2017/1/21.
@@ -22,10 +28,19 @@ public class FrescoAssetsActivity extends Activity{
 
     private void init() {
         Uri uri = Uri.parse("res://"+ getApplication().getPackageName()+ R.mipmap.ic_launcher);
+        Bitmap bmp = null;
+
         ImageView iv_res = (ImageView) findViewById(R.id.iv_res);
+        ImageView iv_assets = (ImageView) findViewById(R.id.iv_assets);
         iv_res.setImageResource(R.mipmap.ic_launcher);
-        SimpleDraweeView sdv = (SimpleDraweeView) findViewById(R.id.iv_simple);
-        sdv.setImageURI(uri);
+        try {
+            InputStream is = getAssets().open("j15.png");
+            bmp = BitmapFactory.decodeStream(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.d("wyz", e.getMessage());
+        }
+        iv_assets.setImageBitmap(bmp);
 
     }
 }
