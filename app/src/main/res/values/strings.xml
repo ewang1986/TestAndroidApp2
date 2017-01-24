@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TestAndroidApp</string>
+    <string name="app_name">飞鲨</string>
     <string name="action_settings">Settings</string>
     <string name="KJFrameForAndroid">KJFrameForAndroid</string>
     <string name="OkHttp">OkHttpUtil</string>

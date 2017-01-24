@@ -5,6 +5,7 @@ import android.app.usage.NetworkStatsManager;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.BatteryManager;
 import android.widget.Toast;
 
 /**
@@ -30,6 +31,26 @@ public class CommonUtils {
         } else {
             return info.isConnected();
         }
+    }
+
+    /**
+     * 检测电量是否充足
+     * @param context
+     * @return
+     */
+    public static int hasPower(Context context) {
+        BatteryManager bm = (BatteryManager) context.getSystemService(Context.BATTERY_SERVICE);
+        //bm.isCharging();
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            int energy_counter = bm.getIntProperty(BatteryManager.BATTERY_PROPERTY_ENERGY_COUNTER);
+            return energy_counter;
+        }
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            long e = bm.getLongProperty(BatteryManager.BATTERY_PROPERTY_ENERGY_COUNTER);
+            return (int)e;
+        }
+
 
     }
 }
