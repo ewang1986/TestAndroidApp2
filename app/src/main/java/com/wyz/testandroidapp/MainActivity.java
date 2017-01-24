@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.wyz.testandroidapp.activity.FrescoMainActivity;
 import com.wyz.testandroidapp.activity.KJMainActivity;
 import com.wyz.testandroidapp.activity.OkHttpMainActivity;
+import com.wyz.testandroidapp.utils.CommonUtils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -22,6 +23,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (!CommonUtils.hasNet(this)) {
+            CommonUtils.showToast(this, "网络连接异常！");
+        }
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -90,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent frescoIntent = new Intent(this, FrescoMainActivity.class);
                 startActivity(frescoIntent);
                 break;
+
         }
     }
 }
