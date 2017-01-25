@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.wyz.testandroidapp.activity.FrescoMainActivity;
 import com.wyz.testandroidapp.activity.KJMainActivity;
 import com.wyz.testandroidapp.activity.OkHttpMainActivity;
+import com.wyz.testandroidapp.activity.TestSystemServiceActivity;
 import com.wyz.testandroidapp.utils.CommonUtils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -46,9 +47,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btn_kj = (Button) findViewById(R.id.btn_kjFrame);
         Button btn_okhttp = (Button) findViewById(R.id.btn_okHttp);
         Button btn_fresco = (Button) findViewById(R.id.btn_fresco);
+        Button btn_system_service = (Button) findViewById(R.id.btn_service);
         btn_kj.setOnClickListener(this);
         btn_okhttp.setOnClickListener(this);
         btn_fresco.setOnClickListener(this);
+        btn_system_service.setOnClickListener(this);
     }
 
     @Override
@@ -94,6 +97,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_fresco:
                 Intent frescoIntent = new Intent(this, FrescoMainActivity.class);
                 startActivity(frescoIntent);
+                break;
+            case R.id.btn_service:
+                Intent serviceIntent = new Intent(this, TestSystemServiceActivity.class);
+                startActivity(serviceIntent);
                 break;
 
         }

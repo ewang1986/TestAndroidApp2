@@ -4,4 +4,5 @@
     <string name="KJFrameForAndroid">KJFrameForAndroid</string>
     <string name="OkHttp">OkHttpUtil</string>
     <string name="Fresco">Fresco Image Loader</string>
+    <string name="system_service">Test System Service</string>
 </resources>

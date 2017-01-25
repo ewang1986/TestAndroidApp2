@@ -2,9 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wyz.testandroidapp">
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
     <application
         android:name=".MyApplication"
@@ -29,6 +31,7 @@
         <activity android:name=".activity.FrescoMainActivity"></activity>
         <activity android:name=".activity.FrescoSimpleActivity"></activity>
         <activity android:name=".activity.FrescoAssetsActivity"></activity>
+        <activity android:name=".activity.TestSystemServiceActivity"></activity>
 \
     </application>
 

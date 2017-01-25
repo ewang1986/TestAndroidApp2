@@ -35,4 +35,10 @@
         style="@style/MainButton"
         android:text="@string/Fresco"
         />
+    <Button
+        android:id="@+id/btn_service"
+        android:layout_below="@id/btn_fresco"
+        style="@style/MainButton"
+        android:text="@string/system_service"
+        />
 </RelativeLayout>
