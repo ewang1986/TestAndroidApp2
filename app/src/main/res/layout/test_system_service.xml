@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <Button
+        android:id="@+id/btn_bluetooth"
+        style="@style/MainButton"
+        android:text="蓝牙测试"
+        />
+    <Button
+        android:id="@+id/btn_account"
+        style="@style/MainButton"
+        android:text="账户测试"
+        />
+    <Button
+        android:id="@+id/btn_clipboard"
+        style="@style/MainButton"
+        android:text="粘贴板测试"
+        />
+    <Button
+        android:id="@+id/btn_test"
+        style="@style/MainButton"
+        android:text="测试"
+        />
+</LinearLayout>
