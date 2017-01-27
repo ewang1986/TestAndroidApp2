@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.wyz.testandroidapp.R;
+import com.wyz.testandroidapp.utils.CommonUtils;
 
 /**
  * Created by ewang1986 on 2017/1/25.
@@ -40,8 +41,16 @@ public class TestSystemServiceActivity extends Activity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_bluetooth:
+                CommonUtils.testBluttooth(this);
                 break;
             case R.id.btn_account:
+                CommonUtils.testAccount(this);
+                break;
+            case R.id.btn_clipboard:
+                CommonUtils.testClipboard(this);
+                break;
+            case R.id.btn_testVibrate:
+                CommonUtils.testVibrate(this);
                 break;
         }
     }

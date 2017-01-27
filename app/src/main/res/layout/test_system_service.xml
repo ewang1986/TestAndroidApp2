@@ -21,8 +21,8 @@
         android:text="粘贴板测试"
         />
     <Button
-        android:id="@+id/btn_test"
+        android:id="@+id/btn_testVibrate"
         style="@style/MainButton"
-        android:text="测试"
+        android:text="测试震动"
         />
 </LinearLayout>

@@ -15,6 +15,7 @@ import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.BatteryManager;
+import android.os.Vibrator;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.widget.Toast;
@@ -112,6 +113,13 @@ public class CommonUtils {
     public static void testClipboard(Context context) {
         ClipboardManager cm = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData cd = cm.getPrimaryClip();
-        showToast(context, cd.toString());
+        showToast(context, "clipdata ->"+cd.toString());
+        showToast(context, "item count -> "+cd.getItemCount());
     }
+
+    public static void testVibrate(Context context) {
+        Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        v.vibrate(1000);
+    }
+
 }
