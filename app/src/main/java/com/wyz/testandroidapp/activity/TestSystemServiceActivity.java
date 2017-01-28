@@ -33,8 +33,12 @@ public class TestSystemServiceActivity extends Activity implements View.OnClickL
     private void init() {
         Button btn_bluetooth = (Button) findViewById(R.id.btn_bluetooth);
         Button btn_account = (Button) findViewById(R.id.btn_account);
+        Button btn_clipboard = (Button) findViewById(R.id.btn_clipboard);
+        Button btn_vibrate = (Button) findViewById(R.id.btn_testVibrate);
         btn_bluetooth.setOnClickListener(this);
         btn_account.setOnClickListener(this);
+        btn_clipboard.setOnClickListener(this);
+        btn_vibrate.setOnClickListener(this);
     }
 
     @Override

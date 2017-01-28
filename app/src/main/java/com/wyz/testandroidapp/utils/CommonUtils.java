@@ -9,12 +9,14 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothManager;
 import android.content.ClipData;
+import android.content.ClipDescription;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.BatteryManager;
+import android.os.Build;
 import android.os.Vibrator;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
@@ -113,6 +115,12 @@ public class CommonUtils {
     public static void testClipboard(Context context) {
         ClipboardManager cm = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData cd = cm.getPrimaryClip();
+        ClipDescription desc = cm.getPrimaryClipDescription();
+        ClipData.Item item = cd.getItemAt(0);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            showToast(context, item.getHtmlText());
+        }
+        showToast(context, String.valueOf(item.getText()));
         showToast(context, "clipdata ->"+cd.toString());
         showToast(context, "item count -> "+cd.getItemCount());
     }
