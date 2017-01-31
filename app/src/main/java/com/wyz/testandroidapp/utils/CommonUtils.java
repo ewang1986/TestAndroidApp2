@@ -13,6 +13,7 @@ import android.content.ClipDescription;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.BatteryManager;
@@ -104,6 +105,7 @@ public class CommonUtils {
             for (BluetoothDevice device:list) {
                 Log.d(TAG, "bluetooth device name->"+device.getName());
                 //device.createBond();
+                showToast(context, device.getName());
             }
         }
     }
@@ -125,9 +127,23 @@ public class CommonUtils {
         showToast(context, "item count -> "+cd.getItemCount());
     }
 
+    /**
+     * 测试震动
+     * @param context
+     */
     public static void testVibrate(Context context) {
+        showToast(context, "100ms震动...");
         Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(1000);
+        v.vibrate(100);
     }
+
+    public static void testLocation(Context c) {
+        LocationManager lm = (LocationManager) c.getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
+        List<String> list = lm.getAllProviders();
+        for (String s:list) {
+            showToast(c, "location provider->"+s);
+        }
+    }
+
 
 }
