@@ -118,6 +118,10 @@ public class CommonUtils {
         ClipboardManager cm = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData cd = cm.getPrimaryClip();
         ClipDescription desc = cm.getPrimaryClipDescription();
+        if (cd == null) {
+            showToast(context, "粘贴板为空");
+            return;
+        }
         ClipData.Item item = cd.getItemAt(0);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             showToast(context, item.getHtmlText());
