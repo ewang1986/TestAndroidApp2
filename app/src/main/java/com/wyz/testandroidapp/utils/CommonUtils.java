@@ -14,6 +14,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
+import android.location.LocationProvider;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.BatteryManager;
@@ -146,7 +147,10 @@ public class CommonUtils {
         List<String> list = lm.getAllProviders();
         for (String s:list) {
             showToast(c, "location provider->"+s);
+            LocationProvider lp = lm.getProvider(s);
+            showToast(c, "name-> "+lp.getName());
         }
+
     }
 
 
