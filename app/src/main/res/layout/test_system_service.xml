@@ -25,4 +25,10 @@
         style="@style/MainButton"
         android:text="测试震动"
         />
+    <Button
+        android:id="@+id/btn_testlocation"
+        style="@style/MainButton"
+        android:text="测试地理位置"
+
+        />
 </LinearLayout>
