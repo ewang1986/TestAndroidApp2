@@ -11,6 +11,7 @@ import com.wyz.testandroidapp.R;
  * Created by wyz on 2017/1/20.
  */
 public class FrescoSimpleActivity extends Activity{
+
     private String url = "http://www.dedecms.com/images/product_center.jpg";
 
     @Override
