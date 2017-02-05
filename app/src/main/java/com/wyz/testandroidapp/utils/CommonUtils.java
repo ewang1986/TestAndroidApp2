@@ -92,6 +92,7 @@ public class CommonUtils {
             Log.d(TAG, "type->"+a.type);
             //a.describeContents();
             Log.d(TAG, "toString->"+a.toString());
+            showToast(context, "name->"+a.name);
         }
     }
 
