@@ -22,5 +22,8 @@ public class FrescoSimpleActivity extends Activity{
         Uri uri = Uri.parse(url);
         SimpleDraweeView draweeView = (SimpleDraweeView) findViewById(R.id.my_image_view);
         draweeView.setImageURI(uri);
+        draweeView.setAlpha(0.7f);
+        //设置动画
+        //draweeView.setAnimation();
     }
 }

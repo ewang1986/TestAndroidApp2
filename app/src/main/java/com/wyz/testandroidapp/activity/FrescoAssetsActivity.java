@@ -28,10 +28,9 @@ public class FrescoAssetsActivity extends Activity{
     }
 
     private void init() {
-        //Uri uri = Uri.parse("res://"+ getApplication().getPackageName()+ R.mipmap.ic_launcher);
         Uri uri_net = Uri.parse("http://pic.58pic.com/58pic/11/13/74/96g58PICKft.jpg");
-
         Bitmap bmp = null;
+
         try {
             InputStream is = getAssets().open("j15.png");
             bmp = BitmapFactory.decodeStream(is);
