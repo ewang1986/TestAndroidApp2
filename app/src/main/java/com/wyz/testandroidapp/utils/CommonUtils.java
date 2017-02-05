@@ -151,7 +151,6 @@ public class CommonUtils {
             LocationProvider lp = lm.getProvider(s);
             showToast(c, "name-> "+lp.getName());
         }
-
     }
 
 
