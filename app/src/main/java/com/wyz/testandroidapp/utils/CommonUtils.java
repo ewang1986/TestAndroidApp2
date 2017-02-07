@@ -153,5 +153,14 @@ public class CommonUtils {
         }
     }
 
+    /**
+     * 获取Android系统的API
+     * @param c
+     */
+    @org.jetbrains.annotations.Contract(pure = true)
+    public static int getAndroidApi(Context c) {
+        int currentapiVersion = android.os.Build.VERSION.SDK_INT;
+        return currentapiVersion;
+    }
 
 }

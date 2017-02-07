@@ -4,6 +4,8 @@ import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.wyz.testandroidapp.utils.CommonUtils;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -20,7 +22,20 @@ public class ExampleInstrumentedTest {
     public void useAppContext() throws Exception {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
-
         assertEquals("com.wyz.testandroidapp", appContext.getPackageName());
+    }
+
+    @Test
+    public void networkTest() throws Exception {
+        Context appContext = InstrumentationRegistry.getTargetContext();
+        boolean result = CommonUtils.hasNet(appContext);
+        assertEquals(false, result);
+    }
+
+    @Test
+    public void versionApiTest() throws Exception {
+        Context appContext = InstrumentationRegistry.getTargetContext();
+        int api = CommonUtils.getAndroidApi(appContext);
+        assertEquals(15, api);
     }
 }
