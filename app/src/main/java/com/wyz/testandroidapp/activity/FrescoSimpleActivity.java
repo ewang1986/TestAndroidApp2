@@ -3,6 +3,7 @@ package com.wyz.testandroidapp.activity;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.animation.AlphaAnimation;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.wyz.testandroidapp.R;
@@ -24,6 +25,11 @@ public class FrescoSimpleActivity extends Activity{
         draweeView.setImageURI(uri);
         draweeView.setAlpha(0.7f);
         //设置动画
-        //draweeView.setAnimation();
+        AlphaAnimation anim = new AlphaAnimation(0.0f, 1.0f);
+        anim.setDuration(3000);
+        draweeView.setAnimation(anim);
+        draweeView.startAnimation(anim);
+        
+
     }
 }
