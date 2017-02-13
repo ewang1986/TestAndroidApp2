@@ -32,8 +32,12 @@ public class OkHttpMainActivity extends Activity implements View.OnClickListener
     private void init() {
         Button btn_get = (Button) findViewById(R.id.btn_get);
         Button btn_post = (Button) findViewById(R.id.btn_post);
+        Button btn_one = (Button) findViewById(R.id.btn_one_ok);
+        Button btn_two = (Button) findViewById(R.id.btn_two_ok);
         btn_get.setOnClickListener(this);
         btn_post.setOnClickListener(this);
+        btn_one.setOnClickListener(this);
+        btn_two.setOnClickListener(this);
     }
 
     private void doGet()
@@ -91,6 +95,12 @@ public class OkHttpMainActivity extends Activity implements View.OnClickListener
             break;
             case R.id.btn_post:
                 doPost();
+                break;
+            case R.id.btn_one_ok:
+                CommonUtils.showToast(this, "one");
+                break;
+            case R.id.btn_two_ok:
+                CommonUtils.showToast(this, "two");
                 break;
         }
     }

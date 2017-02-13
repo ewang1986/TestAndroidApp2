@@ -14,4 +14,14 @@
         style="@style/MainButton"
         android:text="POST"
         />
+    <Button
+        android:id="@+id/btn_one_ok"
+        style="@style/MainButton"
+        android:text="One OkActivity"
+        />
+    <Button
+        android:id="@+id/btn_two_ok"
+        style="@style/MainButton"
+        android:text="Two OkActivity"
+        />
 </LinearLayout>
