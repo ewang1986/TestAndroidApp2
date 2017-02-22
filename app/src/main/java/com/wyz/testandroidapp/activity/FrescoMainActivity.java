@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 
 import com.wyz.testandroidapp.R;
@@ -39,5 +40,11 @@ public class FrescoMainActivity extends Activity implements View.OnClickListener
                 startActivity(assetsIntent);
                 break;
         }
+
+        AlphaAnimation anim = new AlphaAnimation(1.0f, 0.5f);
+        anim.setDuration(500);
+        anim.setFillAfter(true);
+        //anim.start();
+        v.startAnimation(anim);
     }
 }
