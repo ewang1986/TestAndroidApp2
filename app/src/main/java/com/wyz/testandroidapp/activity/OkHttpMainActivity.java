@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.wyz.testandroidapp.R;
+import com.wyz.testandroidapp.net.HttpUtil;
 import com.wyz.testandroidapp.utils.CommonUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -91,7 +92,9 @@ public class OkHttpMainActivity extends Activity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_get:
-                doGet();
+                //doGet();
+                MyStringCallback callback = new MyStringCallback();
+                HttpUtil.doGet(url, null, callback);
             break;
             case R.id.btn_post:
                 doPost();
@@ -102,6 +105,21 @@ public class OkHttpMainActivity extends Activity implements View.OnClickListener
             case R.id.btn_two_ok:
                 CommonUtils.showToast(this, "two");
                 break;
+        }
+    }
+
+    private class MyStringCallback extends StringCallback {
+        @Override
+        public void onError(Call call, Exception e, int id) {
+            //call.cancel();
+            //call.enqueue();
+            //call.execute();
+            Log.d(TAG, e.getMessage());
+        }
+
+        @Override
+        public void onResponse(String response, int id) {
+            Log.d(TAG, response);
         }
     }
 }

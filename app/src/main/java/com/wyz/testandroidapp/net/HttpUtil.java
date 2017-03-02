@@ -10,9 +10,19 @@ import java.util.HashMap;
  */
 
 public class HttpUtil {
+
     public static void doGet(String url, HashMap<String, String> params, Callback callback) {
         OkHttpUtils
                 .get()
+                .url(url)
+                .params(params)
+                .build()
+                .execute(callback);
+    }
+
+    public static void doPost(String url, HashMap<String,String> params, Callback callback) {
+        OkHttpUtils
+                .post()
                 .url(url)
                 .params(params)
                 .build()
