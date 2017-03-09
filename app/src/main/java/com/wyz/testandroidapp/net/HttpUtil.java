@@ -28,4 +28,8 @@ public class HttpUtil {
                 .build()
                 .execute(callback);
     }
+
+    public static void uploadFile() {
+
+    }
 }
