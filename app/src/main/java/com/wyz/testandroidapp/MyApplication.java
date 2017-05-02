@@ -22,9 +22,7 @@ public class MyApplication extends Application {
             //其他配置
             .build();
         OkHttpUtils.initClient(okHttpClient);
-
         Fresco.initialize(this);
-
 
     }
 }
